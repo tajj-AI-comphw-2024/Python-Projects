@@ -46,3 +46,4 @@ def analyze_lyrics(file_path):
 file_path = 'example_lyrics.txt'
 result = analyze_lyrics(file_path)
 print(result)
+
