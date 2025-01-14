@@ -45,15 +45,6 @@ def generate_password(length):
     # password = generate_password(length)
     # print("Generated Password:", password)  # Output: Jh0g8P!5Z
 
-    # Example usage:
-    # length = 15
-    # password = generate_password(length)
-    # print("Generated Password:", password)  # Output: 69Y$%r0z!K[=2
-
-    # Example usage:
-    # length = 20
-    # password = generate_password(length)
-    # print("Generated Password:", password)  # Output: 8Z1x&wB56e#r7T!K%G[=3
     password = []
     for _ in range(length):
         password.append(random.choice(all_characters))
