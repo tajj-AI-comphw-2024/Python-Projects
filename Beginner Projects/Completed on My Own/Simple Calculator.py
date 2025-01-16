@@ -14,9 +14,21 @@ for char in [char for char in "Welcome to the Simple Calculator!"]:
     print(char, end = "", flush = True)
     time.sleep(0.05)
 time.sleep(1)
-print()
-userNum1 = input(float("Enter the first number: "))
-userNum1 = input(float("Eter the second number:"))
-userOperation = input("Enter the operation (+, -, *, /): ")
-                 
 
+print()
+
+userNum1 = float(input("Enter the first number: "))
+userNum2 = float(input("Eter the second number:"))
+userOperation = input("Enter the operation (+, -, *, /): ")
+result = 0
+
+if userOperation == "+":
+    result = userNum1 + userNum2
+elif userOperation == "-":
+    result = userNum1 - userNum2
+elif userOperation == "*":
+    result = userNum1 * userNum2
+elif userOperation == "/":
+    result = userNum1 / userNum2
+
+print(f"The reslut is {result}!")
