@@ -17,13 +17,13 @@ Example: Add more interaction options or extend the game by introducing a mini-g
 '''
 import random
 class virtualPet:
-    def __init__(self, name, health=0 , hunger= 0, happiness= 0, petType=None):
+    def __init__(self, name, health , hunger, happiness, petType):
         print("VirtualPet class successfully called")
         self.name = name
         self.health = health
         self.hunger = hunger
         self.happiness = happiness
-        return self.name
+        self.petType = petType
     def checkStatus(self):
         print(f"Name: {self.name}, Health: {self.health}, Hunger: {self.hunger}, Happiness: {self.happiness}")
 '''
@@ -31,22 +31,33 @@ class virtualPet:
 '''
 class Dog(virtualPet):
     print("Dog class successfully called")
+    def __init__(self, name, health, hunger, happiness, petType):
+        super().__init__(name, health, hunger, happiness, petType)
+        print(f"Hi im {self.name}")
+
+class Cat(virtualPet):
+    print("Cat class successfully called")
+    def __init__(self, name):
+        super().__init__(name)
+        print(f"Hi im {self.name}")
+
+class Bird(virtualPet):
+    print("Bird class successfully called")
+    def __init__(self, name):
+        super().__init__(name)
+        print(f"Hi im {self.name}")
+
+class Fish(virtualPet):
+    print("Fish class successfully called")
     def __init__(self, name):
         super().__init__(name)
         print(f"Hi im {self.name}")
     
-# class Cat(virtualPet):
 
-# class Bird(virtualPet):
+def startGame():
+    dogs = ["Labrador", "Beagle", "Poodle"]
+    selected_breed = random.choice(dogs)
+    dog = Dog(dogname, random.randint(25, 90), random.randint(25, 90), random.randint(25, 90), "Dog")
+    dog.checkStatus()
 
-# class Fish(virtualPet):
-
-# dog = Dog("Buddy", 14, 15, 60)
-
-# print(dog.speak())
-                   
-dogs = ["Labrador", "Beagle", "Poodle"]
-dogname = dogs[random.randint(0, len(dogs)-1)]
-dog = Dog(dogname)
-pettest = virtualPet()
-print(pettest.__init__(name)
+startGame()
