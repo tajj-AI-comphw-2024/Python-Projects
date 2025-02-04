@@ -17,13 +17,13 @@ Example: Add more interaction options or extend the game by introducing a mini-g
 '''
 import random
 class virtualPet:
-    def __init__(self, name, health , hunger, happiness, petType):
+    def __init__(self, name, health , hunger, happiness, breedType):
         print("VirtualPet class successfully called")
         self.name = name
         self.health = health
         self.hunger = hunger
         self.happiness = happiness
-        self.petType = petType
+        self.breedType = breedType
     def checkStatus(self):
         print(f"Name: {self.name}, Health: {self.health}, Hunger: {self.hunger}, Happiness: {self.happiness}")
 '''
@@ -31,33 +31,61 @@ class virtualPet:
 '''
 class Dog(virtualPet):
     print("Dog class successfully called")
-    def __init__(self, name, health, hunger, happiness, petType):
-        super().__init__(name, health, hunger, happiness, petType)
+    def __init__(self, name, health, hunger, happiness, breedType):
+        super().__init__(name, health, hunger, happiness, breedType)
         print(f"Hi im {self.name}")
 
 class Cat(virtualPet):
     print("Cat class successfully called")
-    def __init__(self, name):
-        super().__init__(name)
+    def __init__(self, name, health, hunger, happiness, breedType):
+        super().__init__(name, health, hunger, happiness, breedType)
         print(f"Hi im {self.name}")
 
 class Bird(virtualPet):
     print("Bird class successfully called")
-    def __init__(self, name):
-        super().__init__(name)
+    def __init__(self, name, health, hunger, happiness, breedType):
+        super().__init__(name, health, hunger, happiness, breedType)
         print(f"Hi im {self.name}")
 
 class Fish(virtualPet):
     print("Fish class successfully called")
-    def __init__(self, name):
-        super().__init__(name)
+    def __init__(self, name, health, hunger, happiness, breedType):
+        super().__init__(name, health, hunger, happiness, breedType)
         print(f"Hi im {self.name}")
     
 
 def startGame():
-    dogs = ["Labrador", "Beagle", "Poodle"]
-    selected_breed = random.choice(dogs)
-    dog = Dog(dogname, random.randint(25, 90), random.randint(25, 90), random.randint(25, 90), "Dog")
-    dog.checkStatus()
+    dogBreeds = ["Labrador", "Beagle", "Poodle"]
+    catsBreeds = ["Siamese", "Persian", "Maine Coon"]
+    birdBreeds = ["Cardinal", "Cockatiel", "Parrot"]
+    fishBreeds = ["Goldfish", "Tuna", "Salmon"]
+    
+    
+    print("Welcome to the Virtual Pet Simulator!")
+    
+    while True:
+        # Print menu
+        print("Select your pet type:")
+        print("1. Dog")
+        print("2. Cat")
+        print("3. Bird")
+        print("4. Fish")
+        print("6. Random Pet")
+        print("7. Exit")
+        print("Inputs ex format: 1, 1., Dog, dog, DoG, DOG or etc")
+        userChoice = input("Enter your choice: ").lower()
+
+        # Decision Making Process
+        if userChoice in ["1", "1.", "dog"]:
+            while True:
+                print("Select your breed type or enter your own:")
+                print("1. Dog Breeds: "+dogBreeds)
+                print("2. Enter my own")
+                print("3. Random Breed")
+                userBreedChoice = input("Enter your breed choice: ").lower()
+                # Handles breed inputs
+                if userBreedChoice in dogBreeds:
+                    pet = (use)
+                    
 
 startGame()
