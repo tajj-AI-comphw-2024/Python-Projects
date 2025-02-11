@@ -60,10 +60,13 @@ def startGame():
     birdBreeds = ["Cardinal", "Cockatiel", "Parrot"]
     fishBreeds = ["Goldfish", "Tuna", "Salmon"]
     
-    
+    health = random.randint(20,100)
+    hunger = random.randint(20,100)
+    happiness = random.randint(20,100)
+
     print("Welcome to the Virtual Pet Simulator!")
-    
-    while True:
+    running = True
+    while running:
         # Print menu
         print("Select your pet type:")
         print("1. Dog")
@@ -84,8 +87,21 @@ def startGame():
                 print("3. Random Breed")
                 userBreedChoice = input("Enter your breed choice: ").lower()
                 # Handles breed inputs
-                if userBreedChoice in dogBreeds:
-                    pet = (use)
+                if userBreedChoice in [breed.lower() for breed in dogBreeds]:
+                    pet = Dog(input("Enter your pet's name: "), health, hunger, happiness, userBreedChoice)
+                    pet.checkStatus() 
+                    break
+                elif userBreedChoice in ["2","2.", "enter my own"]:
+                    pet = Dog(input("Enter your pet's name: "), health, hunger, happiness, input("Enter your breed: "))
+                    pet.checkStatus()
+                    break
+                elif userBreedChoice in ["3","3.", "random breed"]:
+                    pet = Dog(input("Enter your pet's name: "), health, hunger, happiness, random.choice(dogBreeds))
+                    pet.checkStatus()
+                    break
+                else:
+                    print("Invalid choice. Please try again.")
+            running = False
         elif userChoice in ["2", "2.", "cat"]:
             pass
         elif userChoice in ["3", "3.", "bird"]:
