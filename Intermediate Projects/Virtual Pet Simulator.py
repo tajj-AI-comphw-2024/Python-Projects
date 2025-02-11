@@ -70,8 +70,8 @@ def startGame():
         print("2. Cat")
         print("3. Bird")
         print("4. Fish")
-        print("6. Random Pet")
-        print("7. Exit")
+        print("5. Random Pet")
+        print("6. Exit")
         print("Inputs ex format: 1, 1., Dog, dog, DoG, DOG or etc")
         userChoice = input("Enter your choice: ").lower()
 
@@ -79,13 +79,26 @@ def startGame():
         if userChoice in ["1", "1.", "dog"]:
             while True:
                 print("Select your breed type or enter your own:")
-                print("1. Dog Breeds: "+dogBreeds)
+                print("1. Dog Breeds: "+str(dogBreeds))
                 print("2. Enter my own")
                 print("3. Random Breed")
                 userBreedChoice = input("Enter your breed choice: ").lower()
                 # Handles breed inputs
                 if userBreedChoice in dogBreeds:
                     pet = (use)
+        elif userChoice in ["2", "2.", "cat"]:
+            pass
+        elif userChoice in ["3", "3.", "bird"]:
+            pass
+        elif userChoice in ["4", "4.", "fish"]:
+            pass
+        elif userChoice in ["5", "5.", "random, random pet"]:
+            pass
+        elif userChoice in ["6", "6.", "exit"]:
+            pass
+            break
+        else:
+            print("Invalid choice. Please try again.")
                     
 
 startGame()
