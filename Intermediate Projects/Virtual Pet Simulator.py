@@ -118,3 +118,4 @@ def startGame():
                     
 
 startGame()
+test: int = 12
