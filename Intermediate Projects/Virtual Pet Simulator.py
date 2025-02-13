@@ -1,6 +1,5 @@
 import random
 from typing import List
-
 class VirtualPet:
     def __init__(self, name: str, health: int, hunger: int, happiness: int, breedType: str) -> None:
         print("VirtualPet class successfully called")
@@ -17,6 +16,7 @@ class Dog(VirtualPet):
     def __init__(self, name: str, health: int, hunger: int, happiness: int, breedType: str) -> None:
         super().__init__(name, health, hunger, happiness, breedType)
         print(f"Hi, I'm {self.name}")
+
 
 class Cat(VirtualPet):
     def __init__(self, name: str, health: int, hunger: int, happiness: int, breedType: str) -> None:
@@ -56,6 +56,8 @@ def create_pet(pet_class, breeds: List[str], health: int, hunger: int, happiness
             break
         else:
             print("Invalid choice. Please try again.")
+
+# def intera
 
 def startGame() -> None:
     dogBreeds = ["Labrador", "Beagle", "Poodle"]
@@ -125,4 +127,5 @@ def startGame() -> None:
         else:
             print("Invalid choice. Please try again.")
 
-startGame()
+if __name__ == "__main__":
+    startGame()
