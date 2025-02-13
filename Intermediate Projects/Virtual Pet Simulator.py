@@ -100,15 +100,24 @@ def startGame() -> None:
             pet.checkStatus()
             running = False
         elif userChoice in ["5", "5.", "random", "random pet"]:
+            # Randomly select a pet class (Dog, Cat, Bird, or Fish)
             pet_class = random.choice([Dog, Cat, Bird, Fish])
+            
+            # Create a dictionary that maps each pet class to its corresponding list of breeds
             breeds = {
                 Dog: dogBreeds,
                 Cat: catBreeds,
                 Bird: birdBreeds,
                 Fish: fishBreeds
-            }[pet_class]
+            }[pet_class]  # Access the list of breeds corresponding to the randomly selected pet class
+            
+            # Create a new pet using the selected pet class and breed list
             pet = create_pet(pet_class, breeds, health, hunger, happiness)
+            
+            # Check the status of the newly created pet
             pet.checkStatus()
+            
+            # Set running to False to exit the main loop
             running = False
         elif userChoice in ["6", "6.", "exit"]:
             print("Thanks for playing!")
