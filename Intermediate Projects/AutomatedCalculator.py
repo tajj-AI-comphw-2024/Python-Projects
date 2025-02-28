@@ -7,3 +7,4 @@ Goal: Practice working with functions, conditional statements, error handling, a
 Libraries: math
 Example: Expand the calculator by adding a graphical user interface (GUI) or implementing a history feature that stores recent calculations.
 """
+from math import m

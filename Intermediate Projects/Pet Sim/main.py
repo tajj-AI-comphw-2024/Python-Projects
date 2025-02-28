@@ -1,63 +1,8 @@
+# main.py
 import random
-from typing import List
-
-class VirtualPet:
-    def __init__(self, name: str, health: int, hunger: int, happiness: int, breedType: str) -> None:
-        print("VirtualPet class successfully called")
-        self.name = name
-        self.health = health
-        self.hunger = hunger
-        self.happiness = happiness
-        self.breedType = breedType
-
-    def checkStatus(self) -> None:
-        print(f"Name: {self.name}, Health: {self.health}, Hunger: {self.hunger}, Happiness: {self.happiness}")
-
-class Dog(VirtualPet):
-    def __init__(self, name: str, health: int, hunger: int, happiness: int, breedType: str) -> None:
-        super().__init__(name, health, hunger, happiness, breedType)
-        print(f"Hi, I'm {self.name}")
-
-
-class Cat(VirtualPet):
-    def __init__(self, name: str, health: int, hunger: int, happiness: int, breedType: str) -> None:
-        super().__init__(name, health, hunger, happiness, breedType)
-        print(f"Hi, I'm {self.name}")
-
-class Bird(VirtualPet):
-    def __init__(self, name: str, health: int, hunger: int, happiness: int, breedType: str) -> None:
-        super().__init__(name, health, hunger, happiness, breedType)
-        print(f"Hi, I'm {self.name}")
-
-class Fish(VirtualPet):
-    def __init__(self, name: str, health: int, hunger: int, happiness: int, breedType: str) -> None:
-        super().__init__(name, health, hunger, happiness, breedType)
-        print(f"Hi, I'm {self.name}")
-
-def create_pet(pet_class, breeds: List[str], health: int, hunger: int, happiness: int) -> VirtualPet:
-    while True:
-        print("Select your breed type or enter your own:")
-        print(f"1. {pet_class.__name__} Breeds: {breeds}")
-        print("2. Enter my own")
-        print("3. Random Breed")
-        print("4. Back")
-        print("5. Exit")
-        userBreedChoice = input("Enter your breed choice: ").lower()
-        if userBreedChoice in [breed.lower() for breed in breeds]:
-            return pet_class(input("Enter your pet's name: "), health, hunger, happiness, userBreedChoice)
-        elif userBreedChoice in ["2", "2.", "enter my own"]:
-            return pet_class(input("Enter your pet's name: "), health, hunger, happiness, input("Enter your breed: "))
-        elif userBreedChoice in ["3", "3.", "random breed"]:
-            return pet_class(input("Enter your pet's name: "), health, hunger, happiness, random.choice(breeds))
-        elif userBreedChoice in ["4", "4.", "back"]:
-            return None  # Return None to indicate going back
-        elif userBreedChoice in ["5", "5.", "exit"]:
-            print("Thanks for playing!")
-            exit()  # Exit the program
-        else:
-            print("Invalid choice. Please try again.")
-
-# def intera
+from create_pet import create_pet
+from virtual_pet import Dog, Cat, Bird, Fish
+from pet_actions import *
 
 def startGame() -> None:
     dogBreeds = ["Labrador", "Beagle", "Poodle"]
@@ -87,24 +32,20 @@ def startGame() -> None:
         # Decision Making Process
         if userChoice in ["1", "1.", "dog"]:
             pet = create_pet(Dog, dogBreeds, health, hunger, happiness)
-            if pet:
-                pet.checkStatus()
-                running = False
+            pet.checkStatus()
+            running = False
         elif userChoice in ["2", "2.", "cat"]:
             pet = create_pet(Cat, catBreeds, health, hunger, happiness)
-            if pet:
-                pet.checkStatus()
-                running = False
+            pet.checkStatus()
+            running = False
         elif userChoice in ["3", "3.", "bird"]:
             pet = create_pet(Bird, birdBreeds, health, hunger, happiness)
-            if pet:
-                pet.checkStatus()
-                running = False
+            pet.checkStatus()
+            running = False
         elif userChoice in ["4", "4.", "fish"]:
             pet = create_pet(Fish, fishBreeds, health, hunger, happiness)
-            if pet:
-                pet.checkStatus()
-                running = False
+            pet.checkStatus()
+            running = False
         elif userChoice in ["5", "5.", "random", "random pet"]:
             # Randomly select a pet class (Dog, Cat, Bird, or Fish)
             pet_class = random.choice([Dog, Cat, Bird, Fish])
@@ -119,17 +60,16 @@ def startGame() -> None:
             
             # Create a new pet using the selected pet class and breed list
             pet = create_pet(pet_class, breeds, health, hunger, happiness)
-            if pet:
                 # Check the status of the newly created pet
-                pet.checkStatus()
+            pet.checkStatus()
                 # Set running to False to exit the main loop
-                running = False
+            running = False
         elif userChoice in ["6", "6.", "exit"]:
             print("Thanks for playing!")
             running = False
         else:
             print("Invalid choice. Please try again.")
 
+        
 if __name__ == "__main__":
     startGame()
-    
