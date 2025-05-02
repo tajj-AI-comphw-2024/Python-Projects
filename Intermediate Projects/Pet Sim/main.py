@@ -1,10 +1,28 @@
-# main.py
+"""
+Main Module for Virtual Pet Simulator
+Created: April 5th, 2025
+Finished: May 2nd, 2025
+
+Description:
+This is the main entry point for the Virtual Pet Simulator. Users can select a pet, interact with it, and view its status.
+
+Skills Developed:
+- User Input Handling
+- Randomization
+- Integration of Multiple Modules
+
+Libraries: None (pure Python)
+"""
+
 import random
 from create_pet import create_pet
 from virtual_pet import Dog, Cat, Bird, Fish
 from pet_actions import *
 
 def startGame() -> None:
+    """
+    Start the Virtual Pet Simulator game.
+    """
     dogBreeds = ["Labrador", "Beagle", "Poodle"]
     catBreeds = ["Siamese", "Persian", "Maine Coon"]
     birdBreeds = ["Cardinal", "Cockatiel", "Parrot"]

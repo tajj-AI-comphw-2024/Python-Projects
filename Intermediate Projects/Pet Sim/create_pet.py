@@ -1,9 +1,37 @@
-# create_pet.py
+"""
+Create Pet Module
+Created: April 5th, 2025
+Finished: May 2nd, 2025
+
+Description:
+This module provides functionality to create a virtual pet by selecting its breed and attributes.
+
+Skills Developed:
+- User Input Handling
+- Randomization
+- Function Design
+
+Libraries: None (pure Python)
+"""
+
 import random
 from typing import List
 from virtual_pet import VirtualPet, Dog, Cat, Bird, Fish
 
 def create_pet(pet_class, breeds: List[str], health: int, hunger: int, happiness: int) -> VirtualPet:
+    """
+    Create a new pet instance based on user input.
+
+    Args:
+        pet_class (class): The class of the pet (e.g., Dog, Cat).
+        breeds (List[str]): List of available breeds for the pet.
+        health (int): Initial health of the pet.
+        hunger (int): Initial hunger of the pet.
+        happiness (int): Initial happiness of the pet.
+
+    Returns:
+        VirtualPet: An instance of the selected pet class.
+    """
     while True:
         print("Select your breed type or enter your own:")
         print(f"1. {pet_class.__name__} Breeds: {breeds}")
